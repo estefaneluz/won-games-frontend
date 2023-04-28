@@ -6,7 +6,6 @@ const withPWA = require('next-pwa')({
   disable: !isProd
 })
 
-
 const nextConfig = withPWA({
   swcMinify: true,
   experimental: {
