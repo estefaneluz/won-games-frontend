@@ -1,0 +1,27 @@
+{
+  "env": {
+    "jest": true,
+    "node": true
+  },
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:prettier/recommended",
+    "plugin:storybook/recommended"
+  ],
+  "plugins": [
+    "react-hooks"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "no-unused-vars": "error",
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off"
+  }
+}
