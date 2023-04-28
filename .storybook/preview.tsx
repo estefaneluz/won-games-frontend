@@ -2,6 +2,8 @@ import { RouterContext } from 'next/dist/shared/lib/router-context'
 import type { Preview, StoryFn } from '@storybook/react'
 import GlobalStyles from '../src/styles/global';
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import theme from '../src/styles/theme'
 
 const preview: Preview = {
   parameters: {
@@ -18,10 +20,10 @@ const preview: Preview = {
   },
   decorators: [
     (Story: StoryFn) => (
-      <>
+      <ThemeProvider theme={theme}>
         <GlobalStyles />
         <Story />
-      </>
+      </ThemeProvider>
     )
   ],
 }
