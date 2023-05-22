@@ -19,10 +19,20 @@ export const Default: Story = {
     children: 'Buy now'
   }
 }
+
 export const withIcon: Story = {
   args: {
     size: 'small',
     children: 'Buy now',
     icon: <AddShoppingCart />
+  }
+}
+
+export const asIcon: Story = {
+  args: {
+    size: 'large',
+    children: 'Buy now',
+    as: 'a',
+    href: '/link'
   }
 }
