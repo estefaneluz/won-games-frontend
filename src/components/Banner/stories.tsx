@@ -18,4 +18,24 @@ export default {
 
 type Story = StoryObj<typeof Banner>
 
-export const Default: Story = {}
+export const Default: Story = {
+  render: (args) => (
+    <div style={{ maxWidth: '104rem', margin: '0 auto' }}>
+      <Banner {...args} />
+    </div>
+  )
+}
+
+export const WithRibbon: Story = {
+  render: (args) => (
+    <div style={{ maxWidth: '104rem' }}>
+      <Banner {...args} />
+    </div>
+  )
+}
+
+WithRibbon.args = {
+  ribbon: 'My ribbon',
+  ribbonColor: 'secondary',
+  ribbonSize: 'small'
+}

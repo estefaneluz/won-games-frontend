@@ -1,4 +1,6 @@
 import Button from '../Button'
+import MediaMatch from '../MediaMatch'
+import Ribbon, { RibbonColors, RibbonSizes } from '../Ribbon'
 import * as S from './styles'
 
 export type BannerProps = {
@@ -7,6 +9,9 @@ export type BannerProps = {
   subtitle: string
   buttonLabel: string
   buttonLink: string
+  ribbon?: string
+  ribbonSize?: RibbonSizes
+  ribbonColor?: RibbonColors
 }
 
 const Banner = ({
@@ -14,9 +19,20 @@ const Banner = ({
   title,
   subtitle,
   buttonLabel,
-  buttonLink
+  buttonLink,
+  ribbon,
+  ribbonSize,
+  ribbonColor
 }: BannerProps) => (
   <S.Wrapper>
+    {!!ribbon && (
+      <MediaMatch greaterThan="medium">
+        <Ribbon color={ribbonColor} size={ribbonSize}>
+          {ribbon}
+        </Ribbon>
+      </MediaMatch>
+    )}
+
     <S.Image src={img} role="img" aria-label={title} />
 
     <S.Caption>
